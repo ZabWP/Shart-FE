@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import "./gallery.css";
 import {useNavigate} from 'react-router-dom';
 
 const Gallery = () => {
-  const [galleryItems, setGalleryItems] = useState([]);
+  const [galleryItems, setGalleryItems] = useState();
 
   const navigate = useNavigate();
 
@@ -12,11 +12,18 @@ const Gallery = () => {
   }
 
   useEffect(() => {
-    fetch("https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/artPosts.php") 
-      .then((response) => response.json())
-      .then((data) => setGalleryItems(data)) 
-      .catch((error) => console.error("Error fetching data:", error));
+    const fetchData = async () => {
+      const res = await fetch("https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/artPosts.php")
+      if (!res.ok) throw new Error("Failed to fetch");
+
+      
+      const data = await res.json();
+      setGalleryItems(data);
+    }
+
+    fetchData();
   }, []);
+
 
   if (!galleryItems) {
     return <div>Loading...</div>;
@@ -25,10 +32,10 @@ const Gallery = () => {
   return (
     <div className="artContainer">
       {galleryItems.map((data, index) => ( 
-        <div key={index} className="artItem" onClick={() => navUser(data.id)}>
-          <h2>{data.name}</h2>
+        <div key={index} className="artItem" onClick={() => navUser(data.artID)}>
+          <h2>{data.artName}</h2>
           <div className="thmbContainer">
-          <img src={data.image} className="thumbnail" alt="pic" />
+          <img src={data.artImgLink} className="thumbnail" alt="pic" />
           </div>
         </div>
       ))}

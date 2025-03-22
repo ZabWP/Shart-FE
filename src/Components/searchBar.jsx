@@ -1,21 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import searchStore from '../stateManagement/searchStore';
+
 
 const SearchBar = () => {
     const navigate = useNavigate();
-    const [searchTerm, setSearchTerm] = React.useState('');
-    const handleChange = (e) => {
-        setSearchTerm(e.target.value);
-    }
-    const handleSearch = () => {
-        fetch("https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/database.php", {
-            method: "POST",
-            body: searchTerm,
-          })
-            .then((res) => res.text())
-            .then((data) => console.log(data))
-            .catch((err) => console.error("Error:", err));
+    const [searchQ, setSearchQ] = React.useState('');
+    const setSearchResults = searchStore((state) => state.setSearchResults);
+ 
 
+    const handleChange = (e) => {
+        setSearchQ(e.target.value);
+    }
+
+    const handleSearch = () => {
+        fetch("https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/search.php?query="+ searchQ, {
+            method: "GET",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+                setSearchResults(data);})
+            .catch((err) => console.error("Error:", err));
         navigate('/search');
     };
 

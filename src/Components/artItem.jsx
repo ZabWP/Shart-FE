@@ -15,7 +15,6 @@ const ArtItem = () => {
 
             const data = await res.json();
             setArtItem(data);
-            console.log(artItem);
         };
 
         fetchData();
@@ -29,10 +28,11 @@ const ArtItem = () => {
 
     return (
         <div>
-            <img src={artItem.image} alt={artItem.name} />
-            <h2>{artItem.name}</h2>
-            <p>Author: {artItem.creator}</p>
-            <p>Date Posted: {artItem.createdAt}</p>
+
+            <img src={artItem[0].artImgLink} alt={artItem[0].artName} />
+            <h2>{artItem[0].artName}</h2>
+            <p>Author ID: {artItem[0].authorID}</p>
+            <p>Date Posted: {artItem[0].postedAt}</p>
             <button onClick={() => navigate('/home')}>Back to Home</button>
 
         </div>
