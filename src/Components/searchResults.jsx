@@ -19,7 +19,7 @@ const SearchResults = () => {
             <h3>Profiles</h3>
             <div className="profilesSearchResults">
             {users.map(user => (
-                <div key={user.userID} className='profile' onClick={()=>     navigate('/profile/'+ user.user_ID + '/' + user.username)}>
+                <div key={user.userID} className='profile' onClick={()=>     navigate('/profile/'+ user.userID + '/' + user.username)}>
                     <img src={user.profilePic} alt="pfp"  className='pfp'/>
                     <p>{user.username}</p>
                 </div>

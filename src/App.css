@@ -22,7 +22,6 @@
 .profilesSearchResults {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
     align-items: center;
     width: 100vw;
     overflow-x: scroll;

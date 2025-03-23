@@ -1,22 +1,31 @@
 import SSO from "./googleSSO";
+import React from 'react';
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import searchStore from '../stateManagement/searchStore';
+
 const Navbar = () => {
 
   const navigate = useNavigate();
-  const [profileImage, setProfileImage] = useState();
+  const [searchQ, setSearchQ] = React.useState('');
+  const setSearchResults = searchStore((state) => state.setSearchResults);
 
-  // useEffect(() => {
-  //   // Fetch the profile image URL from an API or local storage
-  //   const fetchProfileImage = async () => {
-  //     const response = await fetch("/api/profile-image");
-  //     const data = await response.json();
-  //     setProfileImage(data.imageUrl);
-  //   };
 
-  //   fetchProfileImage();
-  // }, []);
+  const handleChange = (e) => {
+    setSearchQ(e.target.value);
+}
+
+const handleSearch = (e) => {
+    e.preventDefault();
+    fetch("https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/search.php?query="+ searchQ, {
+        method: "GET",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+            setSearchResults(data);})
+        .catch((err) => console.error("Error:", err));
+    navigate('/search');
+};
 
   return (
     <div className="navbarContainer">
@@ -25,11 +34,15 @@ const Navbar = () => {
       <h1>Shart Gallery</h1>
       </div>
      
+      <form  onSubmit={handleSearch}>
+        <input type="text" placeholder=" Search Posts/Profiles" value={searchQ} onChange={handleChange} />
+        <button type="submit">Search</button>
+      </form>
+
+
       <SSO />
 
-      <div className="profileContainer">
-        <img src={profileImage ? profileImage : "https://cdn.discordapp.com/attachments/1346268283279773759/1346874768770596985/blank-profile-picture-973460_1280.png?ex=67c9c660&is=67c874e0&hm=06ed63a7667746d76a0bc1de2f24acbded570777693cc024820afdac53a745ca&"} alt="" />
-      </div>
+     
     </div>
   );
 };

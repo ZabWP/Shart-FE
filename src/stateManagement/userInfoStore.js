@@ -5,6 +5,7 @@ const useUserStore = create((set) => ({
   token: null,
   setUser: (userData) => set({ user: userData }),
   setToken: (token) => set({ token }),
+  logout: () => set({user: null}),
 }));
 
 export default useUserStore;
