@@ -24,7 +24,7 @@ const handleSearch = (e) => {
         .then((data) => {
             setSearchResults(data);})
         .catch((err) => console.error("Error:", err));
-    navigate('/search');
+    navigate('Shart-FE/search');
 };
 
   return (

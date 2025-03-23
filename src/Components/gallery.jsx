@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import "./gallery.css";
 import {useNavigate} from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const Gallery = () => {
   const navigate = useNavigate();
 
   const navUser = (id) => {
-    navigate('/gallery/' + id);
+    navigate('Shart-FE/gallery/' + id);
   }
 
   useEffect(() => {
