@@ -2,7 +2,7 @@ import Home from "./Components/home";
 import Navbar from "./Components/navbar";
 import useUserStore from "./stateManagement/userInfoStore";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import ArtItem from "./Components/artItem";
 import SearchResults from "./Components/searchResults";
 import Profile from "./Components/profile";
@@ -60,8 +60,8 @@ const App = () => {
       <Router>
       <Navbar />
       <Routes>
+        <Route path="Shart-FE/*" element={<Navigate to="/Shart-FE" />} />
         <Route path="Shart-FE/" element={<Home />} />
-        <Route path="Shart-FE/home" element={<Home />} />
         <Route path="Shart-FE/gallery/:id" element={<ArtItem />} />
         <Route path="Shart-FE/search" element={<SearchResults />} />
         <Route path="Shart-FE/profile/:userID/:username" element={<Profile />} />

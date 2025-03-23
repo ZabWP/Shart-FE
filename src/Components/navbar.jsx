@@ -29,7 +29,7 @@ const handleSearch = (e) => {
 
   return (
     <div className="navbarContainer">
-      <div className="logoContainer" onClick={() => navigate('/Shart-FE/home')}>
+      <div className="logoContainer" onClick={() => navigate('/Shart-FE/')}>
       <img src="https://lh3.googleusercontent.com/pw/AP1GczPLR-MNks-h4cY_Zt-ihCSp61NyiRNDzAMp-GHNMn0SMVOwab8YT0AI3hiKHbToImAchqec1K-yZhUOPliE-8ad42L9Wa8Mc6vmWNJaJJhHLgpjrnI=w2400" alt="logo" />
       <h1>Shart Gallery</h1>
       </div>

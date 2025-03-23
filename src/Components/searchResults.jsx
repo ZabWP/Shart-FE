@@ -19,7 +19,7 @@ const SearchResults = () => {
             <h3>Profiles</h3>
             <div className="profilesSearchResults">
             {users.map(user => (
-                <div key={user.userID} className='profile' onClick={()=>     navigate('Shart-FE/profile/'+ user.userID + '/' + user.username)}>
+                <div key={user.userID} className='profile' onClick={()=>     navigate('/Shart-FE/profile/'+ user.userID + '/' + user.username)}>
                     <img src={user.profilePic} alt="pfp"  className='pfp'/>
                     <p>{user.username}</p>
                 </div>
@@ -33,7 +33,7 @@ const SearchResults = () => {
             <h3>Posts</h3>   
             <div className="artSearchResults">
             {art.map(art => (
-                <div key={art.artID} className='artPost' onClick={()=> navigate('/gallery/'+ art.artID)}>
+                <div key={art.artID} className='artPost' onClick={()=> navigate('/Shart-FE/gallery/'+ art.artID)}>
                     <img src={art.artImgLink
                     } alt="art" className='artPic'/>
                     <p>{art.artName}</p>   

@@ -32,7 +32,7 @@ const ArtItem = () => {
             <h1>Author: {artItem[0].name} {username}</h1>
             <h2>{artItem[0].artName}</h2>
             <p>Date Posted: {artItem[0].postedAt}</p>
-            <button onClick={() => navigate('Shart-FE/home')}>Back to Home</button>
+            <button onClick={() => navigate('/Shart-FE')}>Back to Home</button>
 
         </div>
     );

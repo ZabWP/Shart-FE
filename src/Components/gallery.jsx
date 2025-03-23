@@ -8,7 +8,7 @@ const Gallery = () => {
   const navigate = useNavigate();
 
   const navUser = (id) => {
-    navigate('/gallery/' + id);
+    navigate('./gallery/' + id);
   }
 
   useEffect(() => {
