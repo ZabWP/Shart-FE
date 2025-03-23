@@ -58,11 +58,11 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/gallery/:id" element={<ArtItem />} />
-        <Route path="/search" element={<SearchResults />} />
-        <Route path="/profile/:userID/:username" element={<Profile />} />
+        <Route path="Shart-FE/" element={<Home />} />
+        <Route path="Shart-FE/home" element={<Home />} />
+        <Route path="Shart-FE/gallery/:id" element={<ArtItem />} />
+        <Route path="Shart-FE/search" element={<SearchResults />} />
+        <Route path="Shart-FE/profile/:userID/:username" element={<Profile />} />
       </Routes>
 
       {user ? null : <p>User is not logged in</p>}
