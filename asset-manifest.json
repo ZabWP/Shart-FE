@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shart-FE/static/css/main.49e5afd2.css",
+    "main.js": "/Shart-FE/static/js/main.43d03ca4.js",
+    "index.html": "/Shart-FE/index.html",
+    "main.49e5afd2.css.map": "/Shart-FE/static/css/main.49e5afd2.css.map",
+    "main.43d03ca4.js.map": "/Shart-FE/static/js/main.43d03ca4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49e5afd2.css",
+    "static/js/main.43d03ca4.js"
+  ]
+}
