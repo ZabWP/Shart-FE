@@ -2,7 +2,7 @@ import Home from "./Components/home";
 import Navbar from "./Components/navbar";
 import useUserStore from "./stateManagement/userInfoStore";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ArtItem from "./Components/artItem";
 import SearchResults from "./Components/searchResults";
 import Profile from "./Components/profile";
@@ -56,6 +56,8 @@ const App = () => {
 
   return (
     <div className="App">
+     
+      <Router>
       <Navbar />
       <Routes>
         <Route path="Shart-FE/" element={<Home />} />
@@ -64,6 +66,7 @@ const App = () => {
         <Route path="Shart-FE/search" element={<SearchResults />} />
         <Route path="Shart-FE/profile/:userID/:username" element={<Profile />} />
       </Routes>
+      </Router>
 
       {user ? null : <p>User is not logged in</p>}
 
