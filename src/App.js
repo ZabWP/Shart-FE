@@ -7,6 +7,7 @@ import ArtItem from "./Components/artItem";
 import SearchResults from "./Components/searchResults";
 import Profile from "./Components/profile";
 import Register from "./Components/register";
+import MyProfile from "./Components/myProfile";
 
 
 
@@ -31,7 +32,8 @@ const App = () => {
         <Route path="Shart-FE/" element={<Home />} />
         <Route path="Shart-FE/gallery/:id" element={<ArtItem />} />
         <Route path="Shart-FE/search" element={<SearchResults />} />
-        <Route path="Shart-FE/profile/:userID/:username" element={<Profile />} />
+        <Route path="Shart-FE/profile/:username" element={<Profile />} />
+        <Route path="Shart-FE/profile/myProfile" element={<MyProfile />} />
       </Routes>
       </Router>
 

@@ -72,6 +72,7 @@ const Register = () => {
                 const data = await res.json();
         
                 if (data.status !== "newUser" || data.error === "InvalidEmail") {
+                    useUserStore.getState().setUsername(data[0].username);
                     navigate("./Shart-FE");
                 }
             } catch (error) {

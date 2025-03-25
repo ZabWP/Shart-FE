@@ -1,14 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import searchStore from '../stateManagement/searchStore';
+import useUserStore from '../stateManagement/userInfoStore';
 
 
 const SearchResults = () => {
     const { art, users } = searchStore((state) => state.searchResults);
-  
+    const { username } = useUserStore();
 
     const navigate = useNavigate();
 
+    const handleNavigate = (isUsername) => {
+       
+        if (isUsername === username ) {
+            navigate("/Shart-FE/profile/myProfile");
+        }
+        else {
+            navigate("/Shart-FE/profile/"+ isUsername);
+        }
+    }
 
     return (
         <div>
@@ -19,7 +29,7 @@ const SearchResults = () => {
             <h3>Profiles</h3>
             <div className="profilesSearchResults">
             {users.map(user => (
-                <div key={user.userID} className='profile' onClick={()=>     navigate('/Shart-FE/profile/'+ user.userID + '/' + user.username)}>
+                <div key={user.userID} className='profile' onClick={() => handleNavigate(user.username)}>
                     <img src={user.profilePic} alt="pfp"  className='pfp'/>
                     <p>{user.username}</p>
                 </div>

@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import useUserStore from "../stateManagement/userInfoStore";
+import { useNavigate } from 'react-router-dom';
 
-const Profile = () => {
-    const { username } = useParams();
+
+
+const MyProfile = () => {
     const [profile, setProfile] = useState(null);
     const [error, setError] = useState(null);
+    const {username} = useUserStore();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        if( !username) {
+            navigate("./Shart-FE")
+        }
+
         const fetchProfile = async () => {
             try {
                 const res = await fetch(`https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/users.php?username=${username}`);
@@ -25,7 +33,7 @@ const Profile = () => {
         };
 
         fetchProfile();
-    }, [username]);
+    }, [username, navigate]);
 
     if (error) {
         return <div>Error: {error}</div>;
@@ -43,4 +51,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default MyProfile;

@@ -30,6 +30,7 @@ const SSO = () => {
     console.log("Login failed:", error);
   };
 
+
   // render component
   return (
     <>
@@ -46,8 +47,8 @@ const SSO = () => {
         </div>
       </GoogleOAuthProvider> 
     : 
-      <div className="profileContainer">
-        <img src={user.picture? user.picture : "https://lh3.googleusercontent.com/pw/AP1GczO8O35VIPjOkuTiWIB1os1QYTxkrjDR1CKIPsFtvPsYGeuu_rO-RF68Rhmgv9IkwAtDlwllqrT7T-re1ct_L-uYox6lyK9FjENzv9Dr7G7nV35Mz6Q=w2400"} alt="pfp" />
+      <div className="profileContainer" >
+        <img src={user.picture? user.picture : "https://lh3.googleusercontent.com/pw/AP1GczO8O35VIPjOkuTiWIB1os1QYTxkrjDR1CKIPsFtvPsYGeuu_rO-RF68Rhmgv9IkwAtDlwllqrT7T-re1ct_L-uYox6lyK9FjENzv9Dr7G7nV35Mz6Q=w2400"} alt="pfp" onClick={() => navigate("./Shart-FE/profile/myProfile")} />
       </div>
     }
     </> 
