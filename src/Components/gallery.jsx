@@ -26,7 +26,7 @@ const Gallery = () => {
 
 
   if (!galleryItems) {
-    return <div>Loading...</div>;
+    return <div><h1>Loading...</h1></div>
   }
 
   return (
