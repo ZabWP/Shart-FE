@@ -63,15 +63,5 @@
     }
 }
 
-.registerPage{
-   
-}
 
 
-.mazeImage {
-    width: 80%;
-}
-
-.mazeImage:hover {
-    background-color: REd;
-}

@@ -35,6 +35,11 @@ const MyProfile = () => {
         fetchProfile();
     }, [username, navigate]);
 
+    const handleLogout = () => {
+        useUserStore.getState().logout();
+        navigate("/Shart-FE");
+    }
+
     if (error) {
         return <div>Error: {error}</div>;
     }
@@ -47,6 +52,8 @@ const MyProfile = () => {
             <h1 >{profile[0].name}</h1>
             <p>Username: {profile[0].username}</p>
             <p>Bio: {profile[0].bio}</p>
+
+            <div><button onClick={() => handleLogout()}>Logout</button></div>
         </div>
     );
 };
