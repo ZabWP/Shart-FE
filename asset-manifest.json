@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Shart-FE/static/css/main.49e5afd2.css",
-    "main.js": "/Shart-FE/static/js/main.613842cd.js",
+    "main.js": "/Shart-FE/static/js/main.eb6b9435.js",
     "static/media/maze.jpg": "/Shart-FE/static/media/maze.842e48ea9556844775c0.jpg",
     "index.html": "/Shart-FE/index.html",
     "main.49e5afd2.css.map": "/Shart-FE/static/css/main.49e5afd2.css.map",
-    "main.613842cd.js.map": "/Shart-FE/static/js/main.613842cd.js.map"
+    "main.eb6b9435.js.map": "/Shart-FE/static/js/main.eb6b9435.js.map"
   },
   "entrypoints": [
     "static/css/main.49e5afd2.css",
-    "static/js/main.613842cd.js"
+    "static/js/main.eb6b9435.js"
   ]
 }
