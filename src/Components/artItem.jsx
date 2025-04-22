@@ -22,6 +22,20 @@ const ArtItem = () => {
 
       const data = await res.json();
       setArtItem(data);
+
+      const res2 = await fetch(
+        "https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/checkLike.php?id=" +
+          id
+      );
+      if (!res2.ok) throw new Error("Failed to fetch");
+      const data2 = await res2.json();
+      if (data2.liked) {
+        setIsFavorited(true);
+        console.log("favorited");
+      } else {
+        setIsFavorited(false);
+        console.log("not favorited");
+      }
     };
 
     fetchData();
@@ -32,8 +46,10 @@ const ArtItem = () => {
   }
 
   const handleFavorite = async () => {
-    console.log("username", username);
-    console.log(artItem[0].artID);
+    if (!username) {
+      alert("Please log in to favorite this post.");
+      return;
+    }
 
     if (isFavorited) {
       setIsFavorited(false);
@@ -67,14 +83,16 @@ const ArtItem = () => {
         <h2>{artItem[0].artName}</h2>
         <p>Date Posted: {artItem[0].postedAt}</p>
         <p>{artItem[0].artDesc}</p>
-        <div className="favButton">
-          <div
-            className={isFavorited ? "heartIcon favorited" : " heartIcon"}
-            onClick={() => handleFavorite()}
-          >
-            &#10084;
+        {artItem[0].username === username ? null : (
+          <div className="favButton">
+            <div
+              className={isFavorited ? "heartIcon favorited" : " heartIcon"}
+              onClick={() => handleFavorite()}
+            >
+              &#10084;
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <button onClick={() => navigate("/Shart-FE")}>Back to Home</button>
     </div>
