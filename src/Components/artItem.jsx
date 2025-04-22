@@ -25,7 +25,9 @@ const ArtItem = () => {
 
       const res2 = await fetch(
         "https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/checkLike.php?id=" +
-          id
+          id +
+          "&username=" +
+          username
       );
       if (!res2.ok) throw new Error("Failed to fetch");
       const data2 = await res2.json();
