@@ -75,6 +75,21 @@ const ArtItem = () => {
     }
   };
 
+  function HumanReadableDate({ dateString }) {
+    const date = new Date(dateString.replace(" ", "T")); // Ensure ISO format
+
+    const formattedDate = date.toLocaleString("en-US", {
+      year: "numeric",
+      month: "long", // Try "short" for "Dec"
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+
+    return <span>{formattedDate}</span>;
+  }
+
   return (
     <div className="artPost">
       <div className="imagebg">
@@ -83,7 +98,7 @@ const ArtItem = () => {
       <div className="plaque">
         <p>{artItem[0].name}</p>
         <h2>{artItem[0].artName}</h2>
-        <p>Date Posted: {artItem[0].postedAt}</p>
+        <HumanReadableDate dateString={artItem[0].postedAt} />
         <p>{artItem[0].artDesc}</p>
         {artItem[0].username === username ? null : (
           <div className="favButton">
