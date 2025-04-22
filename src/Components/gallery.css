@@ -1,52 +1,73 @@
 .artContainer {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .artItem {
   margin: 10px 5px;
-  height: 400px;
-  width: 30%;
+  height: 60vh;
+  width: 80vw;
+  max-width: 1480px;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  transition: all .3s ease;
 
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  border: 2px solid #d4c69a; /* muted gold/beige frame */
 }
 
 .thmbContainer {
-  width: 95%;
-  height: 80%;
+  width: 60%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
   overflow: hidden;
-
-
-
 }
 
-.thumbnail{
+.thumbnail {
   height: 100%;
   width: 100%;
   object-fit: cover;
   transform: scale(1.2);
   transition: all 3s ease-in-out;
-  
-
 }
 
-.artItem:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+.artContentContainer {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  font-family: "Georgia", serif;
+  background-color: #f8f5ed; /* soft off-white like a museum wall */
 }
 
-.artItem:hover  .thumbnail{
-  transform: scale(1);
+.artContentContainer .artTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & h2 {
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
+.artContentContainer .descContainer {
+  padding: 30px 20px;
+  font-size: calc(0.1rem + 1.2vw);
+  width: 90%;
+  height: 65%;
+  line-height: 30px;
 }
