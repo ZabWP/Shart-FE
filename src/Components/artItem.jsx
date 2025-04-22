@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import useUserStore from "../stateManagement/userInfoStore";
+
 import "./artItem.css";
 
 const ArtItem = () => {
@@ -8,6 +10,8 @@ const ArtItem = () => {
   const [artItem, setArtItem] = useState(null);
   const [isFavorited, setIsFavorited] = useState(false);
   const navigate = useNavigate();
+  const { username } = useUserStore();
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
@@ -27,6 +31,32 @@ const ArtItem = () => {
     return <div>Loading...</div>;
   }
 
+  const handleFavorite = async () => {
+    console.log("username", username);
+    console.log(artItem[0].artID);
+
+    if (isFavorited) {
+      setIsFavorited(false);
+      await fetch(
+        "https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/unlike.php",
+        {
+          method: "POST",
+          body: JSON.stringify({ username: username, artID: artItem[0].artID }),
+        }
+      );
+    }
+    if (!isFavorited) {
+      setIsFavorited(true);
+      await fetch(
+        "https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/favorites.php",
+        {
+          method: "POST",
+          body: JSON.stringify({ username: username, artID: artItem[0].artID }),
+        }
+      );
+    }
+  };
+
   return (
     <div className="artPost">
       <div className="imagebg">
@@ -40,7 +70,7 @@ const ArtItem = () => {
         <div className="favButton">
           <div
             className={isFavorited ? "heartIcon favorited" : " heartIcon"}
-            onClick={() => setIsFavorited(!isFavorited)}
+            onClick={() => handleFavorite()}
           >
             &#10084;
           </div>
