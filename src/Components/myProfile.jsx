@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import MyLikes from "./myLikes";
 import "./myProfile.css";
 import MyPosts from "./myPosts";
+import Notifications from "./notifications";
 
 const MyProfile = () => {
   const [profile, setProfile] = useState(null);
@@ -89,7 +90,9 @@ const MyProfile = () => {
         <MyPosts />
       ) : componentDisplay === "Likes" ? (
         <MyLikes />
-      ) : componentDisplay === "Notifications" ? null : null}
+      ) : componentDisplay === "Notifications" ? (
+        <Notifications />
+      ) : null}
     </div>
   );
 };
