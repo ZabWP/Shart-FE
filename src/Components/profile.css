@@ -54,18 +54,14 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   width: 100%;
 }
 
 .profilePostsContainer .postsContainer .postItem {
-  width: 30%;
-
-  max-width: 1200px;
-  max-height: 1200px;
-
-  min-width: 400px;
-  min-height: 400px;
+  width: 25vw;
+  height: 25vw;
 
   position: relative;
   background-image: url("https://lh3.googleusercontent.com/pw/AP1GczN1Y5IS1iJDVCsV8SgQaMzSE7YuEfb4AZGHT7DIGMb7P8DLTo86v-zay0SDsgzEuOmSKyNoT8KQut7uZwYRz5fm94ch-3nLiKsIdPdRN0e2RvsyWwM=w2400");
