@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Shart-FE/static/css/main.b064e3b8.css",
-    "main.js": "/Shart-FE/static/js/main.c6799328.js",
+    "main.css": "/Shart-FE/static/css/main.3cffd5c4.css",
+    "main.js": "/Shart-FE/static/js/main.1d86af53.js",
     "index.html": "/Shart-FE/index.html",
-    "main.b064e3b8.css.map": "/Shart-FE/static/css/main.b064e3b8.css.map",
-    "main.c6799328.js.map": "/Shart-FE/static/js/main.c6799328.js.map"
+    "main.3cffd5c4.css.map": "/Shart-FE/static/css/main.3cffd5c4.css.map",
+    "main.1d86af53.js.map": "/Shart-FE/static/js/main.1d86af53.js.map"
   },
   "entrypoints": [
-    "static/css/main.b064e3b8.css",
-    "static/js/main.c6799328.js"
+    "static/css/main.3cffd5c4.css",
+    "static/js/main.1d86af53.js"
   ]
 }
