@@ -94,7 +94,9 @@ const NewPost = () => {
       {imagePreview && (
         <div>
           <div className="newImg">
-            <img src={imagePreview} alt="Preview" />
+            <div className="imgShaper">
+              <img src={imagePreview} alt="Preview" />
+            </div>
           </div>
         </div>
       )}
