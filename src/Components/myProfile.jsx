@@ -70,7 +70,7 @@ const MyProfile = () => {
           <p className="bio"> {profile[0].bio}</p>
         </div>
       </div>
-
+      <hr></hr>
       <div className="profileNavContainer">
         <div className="button" onClick={() => handleComponent("Posts")}>
           Posts

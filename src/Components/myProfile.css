@@ -1,23 +1,28 @@
 .profileNavContainer {
-  display: flex;
   width: 80vw;
-  height: 60px;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgb(183, 183, 183);
+  display: flex;
+  gap: 1rem;
+  margin: 20px auto;
 }
 
 .profileNavContainer .button {
+  border: 2px solid #d4c69a;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background-color: #f8f5ed;
+  color: black;
+  font-size: 1rem;
   cursor: pointer;
-  width: 30%;
+  transition: background-color 0.2s ease;
   text-align: center;
-  padding: 10px;
-  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .meContainer {
   width: 80vw;
   display: flex;
+  margin-top: 30px;
 }
 
 .meContainer .imgCont {
@@ -25,6 +30,9 @@
   & img {
     width: 100%;
     border-radius: 20px;
+    box-shadow:
+      rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   }
 }
 

@@ -32,7 +32,7 @@ const MyPosts = () => {
   }, []);
 
   return (
-    <div>
+    <div className="myPostsComponent">
       <h1>My Posts</h1>
       <button onClick={() => navigate("/Shart-FE/profile/newPost")}>
         New Post

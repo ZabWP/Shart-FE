@@ -59,7 +59,7 @@ const Profile = () => {
   }
   return (
     <div>
-      <div className="profileContainer">
+      <div className="profileContainerr">
         <div className="imgCont">
           <img src={profile[0].profilePic} alt="Profile" />
         </div>
