@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import useUserStore from "../stateManagement/userInfoStore";
 import { useNavigate } from "react-router-dom";
 import MyLikes from "./myLikes";
+import "./myProfile.css";
+import MyPosts from "./myPosts";
 
 const MyProfile = () => {
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState(null);
   const { username } = useUserStore();
+  const [componentDisplay, setComponentDisplay] = useState("Posts");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,9 +39,16 @@ const MyProfile = () => {
     fetchProfile();
   }, [username, navigate]);
 
-  const handleLogout = () => {
-    useUserStore.getState().logout();
-    navigate("/Shart-FE");
+  const handleComponent = (component) => {
+    if (component === "Posts") {
+      setComponentDisplay("Posts");
+    }
+    if (component === "Likes") {
+      setComponentDisplay("Likes");
+    }
+    if (component === "Notifications") {
+      setComponentDisplay("Notifications");
+    }
   };
 
   if (error) {
@@ -50,16 +60,36 @@ const MyProfile = () => {
 
   return (
     <div>
-      <img src={profile[0].profilePic} alt="Profile" />
-      <h1>{profile[0].name}</h1>
-      <p>Username: {profile[0].username}</p>
-      <p>Bio: {profile[0].bio}</p>
-
-      <div>
-        <button onClick={() => handleLogout()}>Logout</button>
+      <div className="meContainer">
+        <div className="imgCont">
+          <img src={profile[0].profilePic} alt="Profile" />
+        </div>
+        <div className="infoCont">
+          <p className="username">{profile[0].username}</p>
+          <h1 className="name">{profile[0].name}</h1>
+          <p className="bio"> {profile[0].bio}</p>
+        </div>
       </div>
 
-      <MyLikes />
+      <div className="profileNavContainer">
+        <div className="button" onClick={() => handleComponent("Posts")}>
+          Posts
+        </div>
+        <div className="button" onClick={() => handleComponent("Likes")}>
+          Likes
+        </div>
+        <div
+          className="button"
+          onClick={() => handleComponent("Notifications")}
+        >
+          Notifications
+        </div>
+      </div>
+      {componentDisplay === "Posts" ? (
+        <MyPosts />
+      ) : componentDisplay === "Likes" ? (
+        <MyLikes />
+      ) : componentDisplay === "Notifications" ? null : null}
     </div>
   );
 };

@@ -13,6 +13,7 @@ import Profile from "./Components/profile";
 import Register from "./Components/register";
 import MyProfile from "./Components/myProfile";
 import Gallery from "./Components/gallery";
+import NewPost from "./Components/newPost";
 
 const App = () => {
   // const setUser = useUserStore((state) => state.setUser);
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="Shart-FE/search" element={<SearchResults />} />
           <Route path="Shart-FE/profile/:username" element={<Profile />} />
           <Route path="Shart-FE/profile/myProfile" element={<MyProfile />} />
+          <Route path="Shart-FE/profile/newPost" element={<NewPost />} />
         </Routes>
       </Router>
 

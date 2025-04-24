@@ -1,0 +1,52 @@
+.profileNavContainer {
+  display: flex;
+  width: 80vw;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(183, 183, 183);
+}
+
+.profileNavContainer .button {
+  cursor: pointer;
+  width: 30%;
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.meContainer {
+  width: 80vw;
+  display: flex;
+}
+
+.meContainer .imgCont {
+  width: 30%;
+  & img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+.meContainer .infoCont {
+  width: 60%;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  & .username {
+    position: absolute;
+    top: 50px;
+  }
+
+  & .name {
+    position: absolute;
+    top: 10px;
+  }
+
+  & .bio {
+    position: absolute;
+    top: 100px;
+  }
+}
