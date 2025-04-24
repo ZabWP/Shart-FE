@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useUserStore from "../stateManagement/userInfoStore";
+import "./register.css";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -12,6 +13,41 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    // Check if username is empty
+    if (username.trim() === "") {
+      alert("Username is required");
+      setLoading(false);
+      return;
+    }
+
+    // Check if username has a space in it
+    if (/\s/.test(username)) {
+      alert("Username cannot contain spaces");
+      setLoading(false);
+      return;
+    }
+    // Check if username is less than 3 characters
+    if (username.length < 3) {
+      alert("Username must be at least 3 characters long");
+      setLoading(false);
+      return;
+    }
+    // Check if username is more than 20 characters
+    if (username.length > 20) {
+      alert("Username must be less than 20 characters long");
+      setLoading(false);
+      return;
+    }
+
+    // Check if username has special characters
+    const specialChars = /[!@#$%^&*(),.?":{}|<>]/g;
+    if (specialChars.test(username)) {
+      alert("Username cannot contain special characters");
+      setLoading(false);
+      return;
+    }
+
     try {
       const res = await fetch(
         "https://codd.cs.gsu.edu/~zbronola1/SoftwareEngineering/shart/registerUser.php",
@@ -38,6 +74,8 @@ const Register = () => {
       const data = await res.json();
       console.log("Response from server:", data);
       if (data.status === "success") {
+        useUserStore.getState().setUsername(username);
+
         navigate("/Shart-FE");
       } else {
         // Error: backend returns invalid data
