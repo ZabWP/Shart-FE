@@ -38,11 +38,15 @@ const MyPosts = () => {
         New Post
       </button>
       <div className="myPostsContainer">
-        {myPosts.map((post, index) => (
-          <div key={index} className="myPostItem">
-            <img src={post.artImgLink} alt="pic" />
-          </div>
-        ))}
+        {myPosts ? (
+          myPosts.map((post, index) => (
+            <div key={index} className="myPostItem">
+              <img src={post.artImgLink} alt="pic" />
+            </div>
+          ))
+        ) : (
+          <div>No posts available</div>
+        )}
       </div>
     </div>
   );
