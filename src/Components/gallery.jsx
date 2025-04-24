@@ -40,7 +40,7 @@ const Gallery = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>; // Show error message if something goes wrong
+    return <div className="postingImgMsg">Error: {error}</div>; // Show error message if something goes wrong
   }
 
   if (!galleryItems) {
