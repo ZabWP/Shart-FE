@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useUserStore from "../stateManagement/userInfoStore";
 import "./newPost.css";
+import { useNavigate } from "react-router-dom";
 
 const NewPost = () => {
   const [image, setImage] = useState(null);
@@ -8,7 +9,7 @@ const NewPost = () => {
   const [postName, setPostName] = useState("");
   const [postDescription, setPostDescription] = useState("");
   const { userID } = useUserStore();
-
+  const navigate = useNavigate();
   const [isUploading, setIsUploading] = useState(false);
 
   const handleImageChange = (e) => {
@@ -54,6 +55,8 @@ const NewPost = () => {
         if (result.error) {
           alert(result.error);
           return;
+        } else {
+          navigate("/Shart-FE/profile/myProfile");
         }
       } else {
         setIsUploading(false);

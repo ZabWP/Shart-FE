@@ -10,7 +10,7 @@ const useUserStore = create(
       setUserID: (userID) => set({ userID }),
       setUser: (userData) => set({ user: userData }),
       setUsername: (Dusername) => set({ username: Dusername }),
-      logout: () => set({ user: null, username: null }),
+      logout: () => set({ user: null, username: null, userID: null }),
     }),
     {
       name: "user-store",

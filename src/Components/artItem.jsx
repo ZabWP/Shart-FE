@@ -93,7 +93,9 @@ const ArtItem = () => {
   return (
     <div className="artPost">
       <div className="imagebg">
-        <img src={artItem[0].artImgLink} alt={artItem[0].artName} />
+        <div className="imgShaper2">
+          <img src={artItem[0].artImgLink} alt={artItem[0].artName} />
+        </div>
       </div>
       <div className="plaque">
         <p>{artItem[0].name}</p>

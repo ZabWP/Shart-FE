@@ -74,19 +74,17 @@ const Profile = () => {
       <div className="profilePostsContainer">
         <h3>Posts</h3>
         <div className="postsContainer">
-          {posts.length < 0 ? (
-            posts.map((post, index) => (
-              <div
-                key={index}
-                className="postItem"
-                onClick={() => navigate(`/Shart-FE/gallery/${post.artID}`)}
-              >
+          {posts.map((post, index) => (
+            <div
+              key={index}
+              className="postItem"
+              onClick={() => navigate(`/Shart-FE/gallery/${post.artID}`)}
+            >
+              <div className="imgShaper">
                 <img src={post.artImgLink} alt="pic" />
               </div>
-            ))
-          ) : (
-            <div className="NA">No posts available</div>
-          )}
+            </div>
+          ))}
         </div>
       </div>
     </div>

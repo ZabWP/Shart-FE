@@ -45,7 +45,9 @@ const MyPosts = () => {
               className="myPostItem"
               onClick={() => navigate(`/Shart-FE/gallery/${post.artID}`)}
             >
-              <img src={post.artImgLink} alt="pic" />
+              <div className="imgShaper">
+                <img src={post.artImgLink} alt="pic" />
+              </div>
             </div>
           ))
         ) : (
