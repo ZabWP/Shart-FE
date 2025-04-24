@@ -1,5 +1,5 @@
 .notiComponent {
-  width: 70vw;
+  width: 75vw;
   min-height: 400px;
   background-color: #f8f5ed;
   border: 2px solid #d4c69a;
@@ -9,6 +9,7 @@
   align-items: center;
   padding: 2rem;
   gap: 1.5rem;
+  margin: 0 auto;
 }
 
 .notiComponent h2 {
