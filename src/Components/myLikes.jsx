@@ -41,7 +41,9 @@ const MyLikes = () => {
             className="myLikedItem"
             onClick={() => navigate(`/Shart-FE/gallery/${like.artID}`)}
           >
-            <img src={like.artImgLink} alt="pic" />
+            <div className="imgShaper">
+              <img src={like.artImgLink} alt="pic" />
+            </div>
           </div>
         ))}
       </div>

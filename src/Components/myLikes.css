@@ -29,14 +29,4 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-
-  & img {
-    width: 80%;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-  }
 }
