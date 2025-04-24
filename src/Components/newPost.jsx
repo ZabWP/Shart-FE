@@ -70,7 +70,7 @@ const NewPost = () => {
   };
 
   if (isUploading) {
-    return <div>Posting...</div>;
+    return <div className="postingImgMsg">Posting...</div>;
   }
 
   return (

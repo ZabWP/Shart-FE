@@ -36,7 +36,7 @@ const Gallery = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // Show loading text
+    return <div className="postingImgMsg">Loading...</div>; // Show loading text
   }
 
   if (error) {
