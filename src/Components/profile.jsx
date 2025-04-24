@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./profile.css";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const { username } = useParams();
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState(null);
   const [posts, setPosts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -74,7 +76,11 @@ const Profile = () => {
         <div className="postsContainer">
           {posts.length < 0 ? (
             posts.map((post, index) => (
-              <div key={index} className="postItem">
+              <div
+                key={index}
+                className="postItem"
+                onClick={() => navigate(`/Shart-FE/gallery/${post.artID}`)}
+              >
                 <img src={post.artImgLink} alt="pic" />
               </div>
             ))

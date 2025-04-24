@@ -5,13 +5,14 @@
   background-color: rgb(246, 246, 246);
   width: 100%;
   box-shadow:
-    rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    rgba(0, 0, 0, 0.3) 0px 19px 18px,
+    rgba(0, 0, 0, 0.22) 0px 15px 6px;
 
   & .logoContainer {
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin-left: 30px;
 
     & img {
       width: 50px;
@@ -25,6 +26,7 @@
     cursor: pointer;
     width: 50px;
     overflow: hidden;
+    margin-right: 30px;
 
     & img {
       width: 100%;
@@ -35,5 +37,43 @@
         rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
         rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     }
+  }
+
+  .search-container {
+    width: 40vw;
+    max-width: 600px;
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem auto;
+  }
+
+  .search-container input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .search-container input:focus {
+    border-color: #d4c69a;
+  }
+
+  .search-container button {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #f8f5ed;
+    border: 2px solid #d4c69a;
+
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .search-container button:hover {
+    background-color: #0056b3;
   }
 }

@@ -40,7 +40,11 @@ const MyPosts = () => {
       <div className="myPostsContainer">
         {myPosts ? (
           myPosts.map((post, index) => (
-            <div key={index} className="myPostItem">
+            <div
+              key={index}
+              className="myPostItem"
+              onClick={() => navigate(`/Shart-FE/gallery/${post.artID}`)}
+            >
               <img src={post.artImgLink} alt="pic" />
             </div>
           ))

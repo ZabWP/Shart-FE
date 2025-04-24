@@ -46,7 +46,7 @@ const Navbar = () => {
         <h1>Shart Gallery</h1>
       </div>
 
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="search-container">
         <input
           type="text"
           placeholder=" Search Posts/Profiles"

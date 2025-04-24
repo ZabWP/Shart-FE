@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import useUserStore from "../stateManagement/userInfoStore";
 import "./myLikes.css";
+import { useNavigate } from "react-router-dom";
 
 const MyLikes = () => {
   const [myLikes, setMyLikes] = useState([]);
   const { userID } = useUserStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLikes = async () => {
@@ -30,11 +32,15 @@ const MyLikes = () => {
   }, [userID]);
 
   return (
-    <div>
+    <div className="myLikesComponent">
       <h1>My Likes</h1>
       <div className="likesContainer">
         {myLikes.map((like, index) => (
-          <div key={index} className="myLikedItem">
+          <div
+            key={index}
+            className="myLikedItem"
+            onClick={() => navigate(`/Shart-FE/gallery/${like.artID}`)}
+          >
             <img src={like.artImgLink} alt="pic" />
           </div>
         ))}
