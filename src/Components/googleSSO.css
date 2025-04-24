@@ -2,3 +2,57 @@
   width: 200px;
   margin-right: 30px;
 }
+
+.profilePicContainer {
+  position: relative;
+
+  width: 10vw;
+  height: 10vh;
+  margin-right: 30px;
+}
+
+.expanded {
+  height: 30vh;
+  width: 10vw;
+}
+
+.profilePic {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #d4c69a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 80px;
+  right: -5px;
+  background-color: #f8f5ed;
+  border: 1px solid #d4c69a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  z-index: 10;
+  min-width: 160px;
+}
+
+.dropdownMenu button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  color: #4a442f;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dropdownMenu button:hover {
+  background-color: #ece6d8;
+}

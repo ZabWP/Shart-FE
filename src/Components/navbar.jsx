@@ -31,11 +31,6 @@ const Navbar = () => {
     navigate("Shart-FE/search");
   };
 
-  const handleLogout = () => {
-    useUserStore.getState().logout();
-    navigate("/Shart-FE");
-  };
-
   return (
     <div className="navbarContainer">
       <div className="logoContainer" onClick={() => navigate("/Shart-FE/")}>
@@ -57,12 +52,6 @@ const Navbar = () => {
       </form>
 
       <SSO />
-
-      {username && (
-        <div>
-          <button onClick={() => handleLogout()}>Logout</button>
-        </div>
-      )}
     </div>
   );
 };
