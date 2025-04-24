@@ -38,3 +38,60 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.newPostComponent {
+  background-color: #f8f5ed;
+  border: 2px solid #d4c69a;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newPostForm input[type="file"] {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #4a442f;
+}
+
+.newPostForm input[type="text"],
+.newPostForm textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #d4c69a;
+  border-radius: 8px;
+  background-color: #fffef9;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.newPostForm input[type="text"]:focus,
+.newPostForm textarea:focus {
+  border-color: #bba973;
+}
+
+.newPostForm button {
+  padding: 0.85rem;
+  background-color: #d4c69a;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.newPostForm button:hover {
+  background-color: #c1b27e;
+}

@@ -71,8 +71,8 @@ const NewPost = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="newPostComponent">
+      <form onSubmit={handleSubmit} className="newPostForm">
         <input type="file" onChange={handleImageChange} />
         <input
           type="text"
